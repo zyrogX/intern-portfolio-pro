@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Space+Grotesk:wght@300..700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Ocean Depth + Tech Dark */
+    --background: 222 47% 4%;
+    --foreground: 213 31% 91%;
+    --card: 222 47% 6%;
+    --card-foreground: 213 31% 91%;
+    --popover: 222 47% 6%;
+    --popover-foreground: 213 31% 91%;
+    --primary: 173 58% 39%;
+    --primary-foreground: 213 31% 91%;
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 213 31% 91%;
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 173 80% 40%;
+    --accent-foreground: 213 31% 91%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 213 31% 91%;
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 173 58% 39%;
+
+    --font-sans: 'Geist', sans-serif;
+    --font-heading: 'Space Grotesk', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 222 47% 4%;
+    --foreground: 213 31% 91%;
+    --card: 222 47% 6%;
+    --card-foreground: 213 31% 91%;
+    --popover: 222 47% 6%;
+    --popover-foreground: 213 31% 91%;
+    --primary: 173 58% 39%;
+    --primary-foreground: 213 31% 91%;
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 213 31% 91%;
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 173 80% 40%;
+    --accent-foreground: 213 31% 91%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 213 31% 91%;
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 173 58% 39%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    background-image: 
+      radial-gradient(at 0% 0%, hsla(173, 58%, 39%, 0.15) 0, transparent 50%),
+      radial-gradient(at 100% 0%, hsla(262, 83%, 58%, 0.1) 0, transparent 50%);
+    background-attachment: fixed;
+  }
+}
+
+.glass {
+  @apply bg-background/60 backdrop-blur-md border border-white/10;
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
+}
+
+.bento-card {
+  @apply relative overflow-hidden rounded-2xl border border-white/5 bg-white/5 p-6 transition-all hover:bg-white/10 hover:border-white/10 hover:shadow-2xl hover:shadow-primary/10;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
